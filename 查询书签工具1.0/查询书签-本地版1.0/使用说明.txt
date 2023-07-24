@@ -1,0 +1,13 @@
+1. 安装python3
+
+推荐Python 3.11.4
+
+2. 安装必要依赖
+
+pip install tkinter
+pip install requests
+pip install pyperclip
+pip install sqlite3
+pip install configparser
+
+3. 按本机配置修改config文件

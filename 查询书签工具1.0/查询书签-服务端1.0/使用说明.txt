@@ -1,0 +1,51 @@
+>>>适用于Linux-Ubuntu系统<<<
+
+1. 安装python3
+
+推荐Python 3.11.4
+
+2. 安装必要依赖
+
+pip install http.server
+pip install socketserver
+pip install sqlite3
+pip install mysql-connector-python
+
+2. 按本机配置修改config文件
+
+3. 启动进程
+
+python3 BookmarkServer.py
+
+
+注：如需使用mysql数据库，暂停进程，config配置删除sqlite3部分，重启进程
+
+4. 设置supervisor守护进程
+
+① 使用 apt-get 命令安装 supervisor：
+sudo apt-get update
+sudo apt-get install supervisor
+
+② 使用以下命令来检查 supervisor 是否已经正确安装
+sudo systemctl status supervisor
+
+③ 配置 supervisor，找到并编辑文件/etc/supervisor/supervisord.conf，参考如下配置：
+
+[program:BookmarkServer]
+directory=/opt  #脚本所在目录
+command=python3 BookmarkServer.py  #运行脚本命令
+autostart=true  #自动启动
+autorestart=true  #自动重启
+startretries=100  
+redirect_stderr=true
+stdout_logfile=/opt/BookmarkServer.log  #运行日志
+
+④ 重新加载 supervisor 配置文件
+sudo supervisorctl reread
+sudo supervisorctl update
+
+⑤ 查询进程运行状态
+sudo supervisorctl status BookmarkServer
+
+5. 浏览器打开ip:7000/bookmark/12345678
+

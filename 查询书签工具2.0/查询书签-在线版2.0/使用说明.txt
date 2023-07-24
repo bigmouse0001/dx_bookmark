@@ -1,0 +1,23 @@
+1. 安装python3
+
+推荐Python 3.11.4
+
+2. 安装必要依赖
+
+pip install os
+pip install sys
+pip install json
+pip install pyperclip
+pip install sqlite3
+pip install configparser
+pip install re
+pip install PySide6
+pip install psutil
+pip install subprocess
+pip install requests
+
+...自己运行看看，提示缺什么module自己再安装吧
+
+3. 修改config.ini，填写api地址
+
+4. 脚本后缀改为.pyw，即可隐藏命令行窗口

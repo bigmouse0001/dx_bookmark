@@ -1,0 +1,12 @@
+1. 安装python3
+
+推荐Python 3.11.4
+
+2. 安装必要依赖
+
+pip install tkinter
+pip install requests
+pip install pyperclip
+pip install configparser
+
+3. 修改config.ini，填写api地址
